@@ -6,12 +6,12 @@
   </head> 
   <body>
 
-		<p class="foo">This is .foo</p>
+		<p class="foo">This is .foo <span class="bar">and .bar</span></p>
 		<p class="bar">This is .bar</p>
 
     <script src="stylin.js"></script>
 		<script>
-		C('.foo', {color: 'red', 'font-style': 'italic', fontWeight: 'bold'}, {media_type: 'screen'});
+		C('.foo', {color: '#c9c', 'font-style': 'italic', fontWeight: 'bold'}, {media_type: 'screen'});
 		C('.foo .bar', {color: 'green'}, {media_type: 'screen'});
 		C('.bar', {color: 'red', 'font-style': 'italic', fontWeight: 'bold'}, {media_type: 'projector'});
 		</script>

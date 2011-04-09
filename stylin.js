@@ -41,6 +41,7 @@
 
 	Stylin.head_element = Stylin.document.getElementsByTagName('head')[0];
 
+	Stylin.element_cache = {};
 
 	// Public methods
 
@@ -48,8 +49,7 @@
 
 		Stylin.options = options = merge_options(options);
 
-		// TODO: check if there is an existing style element for this media type & append to that
-		var style_element = add_style_element(),
+		var style_element = Stylin.element_cache[options['media_type']] = Stylin.element_cache[options['media_type']] || add_style_element(),
 				css = style_element.innerText,
 				property_name
 		;
