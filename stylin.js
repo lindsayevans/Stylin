@@ -8,10 +8,6 @@
 /*jslint eqeqeq: true */
 /*global console: false, document: false */
 
-/* TODO:
- * - pretty much everything
- */
-
 (function(document){
 
 	var Stylin = function(selector, properties, options){
@@ -100,8 +96,9 @@
 	}
 
 	function normalise_property_name(property_name){
-		// TODO: handle initial uppercase char
-		return property_name.replace(/[A-Z]/g, function(s){return '-' + s.toLowerCase();}).toLowerCase();
+		return property_name.charAt(0).toLowerCase() + 
+			property_name.substr(1).replace(/[A-Z]/g, function(s){return '-' + s.toLowerCase();}).toLowerCase()
+		;
 	}
 
 	function normalise_property_value(property_value){
