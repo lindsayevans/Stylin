@@ -72,6 +72,7 @@
 		var el = Stylin.document.createElement('style');
 
 		el.setAttribute('id', '-stylin-' + (++element_index));
+		el.setAttribute('class', '-stylin');
 
 		if(Stylin.options.html_version < 5){
 			el.setAttribute('type', 'text/css');
