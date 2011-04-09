@@ -33,6 +33,7 @@
 	Stylin.debug = false;
 	Stylin.document = document;
 
+	Stylin.options = {};
 	Stylin.default_options = {
 		html_version: 5,
 		media_type: 'any'
@@ -45,7 +46,7 @@
 
 	Stylin.add_rule = function(selector, properties, options){
 
-		options = merge_options(options);
+		Stylin.options = options = merge_options(options);
 
 		// TODO: check if there is an existing style element for this media type & append to that
 		var style_element = add_style_element(),
@@ -72,9 +73,18 @@
 	// Private functions
 
 	function add_style_element(){
-		// TODO: HTML options, media type
 		var el = Stylin.document.createElement('style');
+
 		el.setAttribute('id', '-stylin-' + (++element_index));
+
+		if(Stylin.options.html_version < 5){
+			el.setAttribute('type', 'text/css');
+		}
+
+		if(Stylin.options.media_type !== 'any'){
+			el.setAttribute('media', Stylin.options.media_type);
+		}
+
 		return Stylin.head_element.appendChild(el);
 	}
 
