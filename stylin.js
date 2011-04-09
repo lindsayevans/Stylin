@@ -32,7 +32,8 @@
 	Stylin.options = {};
 	Stylin.default_options = {
 		html_version: 5,
-		media_type: 'any'
+		media_type: 'any',
+		prefix: '-stylin'
 	};
 
 	Stylin.head_element = Stylin.document.getElementsByTagName('head')[0];
@@ -71,8 +72,8 @@
 	function add_style_element(){
 		var el = Stylin.document.createElement('style');
 
-		el.setAttribute('id', '-stylin-' + (++element_index));
-		el.setAttribute('class', '-stylin');
+		el.setAttribute('id', Stylin.options.prefix + '-' + (++element_index));
+		el.setAttribute('class', Stylin.options.prefix);
 
 		if(Stylin.options.html_version < 5){
 			el.setAttribute('type', 'text/css');
