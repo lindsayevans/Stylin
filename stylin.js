@@ -87,14 +87,14 @@
 	}
 
 	function merge_options(options){
-    var new_options = {};
-    for(name in Stylin.default_options){
+		var new_options = {};
+		for(name in Stylin.default_options){
 			new_options[name] = Stylin.default_options[name];
 		}
-    for(name in options){
+		for(name in options){
 			new_options[name] = options[name];
 		}
-    return new_options;
+		return new_options;
 	}
 
 	function normalise_property_name(property_name){
