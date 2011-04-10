@@ -46,7 +46,7 @@
 
 		Stylin.options = options = merge_options(options);
 
-		var style_element = Stylin.element_cache[options['media_type']] = Stylin.element_cache[options['media_type']] || add_style_element(),
+		var style_element = Stylin.element_cache[options.media_type] = Stylin.element_cache[options.media_type] || add_style_element(),
 				css = style_element.innerText,
 				property_name
 		;
@@ -64,7 +64,7 @@
 
 	// Private variables
 	var
-		element_index = 0;
+		element_index = 0
 	;
 
 	// Private functions
