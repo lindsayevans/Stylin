@@ -87,9 +87,12 @@
 	}
 
 	function merge_options(options){
-		var new_options = {};
+		var new_options = {}, name;
 		for(name in Stylin.default_options){
 			new_options[name] = Stylin.default_options[name];
+		}
+		for(name in Stylin.options){
+			new_options[name] = Stylin.options[name];
 		}
 		for(name in options){
 			new_options[name] = options[name];
@@ -98,9 +101,7 @@
 	}
 
 	function normalise_property_name(property_name){
-		return property_name.charAt(0).toLowerCase() + 
-			property_name.substr(1).replace(/[A-Z]/g, function(s){return '-' + s.toLowerCase();}).toLowerCase()
-		;
+		return (property_name.charAt(0) + property_name.substr(1).replace(/[A-Z]/g, function(s){return '-' + s.toLowerCase();})).toLowerCase();
 	}
 
 	function normalise_property_value(property_value){
