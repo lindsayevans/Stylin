@@ -46,8 +46,10 @@
 
 		Stylin.options = options = merge_options(options);
 
+		// style_element.styleSheet bits are for IE compatibility
+
 		var style_element = Stylin.element_cache[options.media_type] = Stylin.element_cache[options.media_type] || add_style_element(),
-				css = style_element.innerText,
+				css = !!style_element.styleSheet ? style_element.styleSheet.cssText : style_element.innerText,
 				property_name
 		;
 
@@ -58,7 +60,11 @@
 		}
 		css += '}';
 
-		style_element.innerText = css;
+		if(!!style_element.styleSheet){
+			style_element.styleSheet.cssText = css;
+		}else{
+			style_element.innerText = css;
+		}
 
 	};
 
