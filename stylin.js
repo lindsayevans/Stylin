@@ -49,7 +49,7 @@
 		// style_element.styleSheet bits are for IE compatibility
 
 		var style_element = Stylin.element_cache[options.media_type] = Stylin.element_cache[options.media_type] || add_style_element(),
-				css = !!style_element.styleSheet ? style_element.styleSheet.cssText : style_element.innerText,
+				css = !!style_element.styleSheet ? style_element.styleSheet.cssText : style_element.innerHTML,
 				property_name
 		;
 
@@ -63,7 +63,7 @@
 		if(!!style_element.styleSheet){
 			style_element.styleSheet.cssText = css;
 		}else{
-			style_element.innerText = css;
+			style_element.innerHTML = css;
 		}
 
 	};
