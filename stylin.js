@@ -1,5 +1,5 @@
 /*!
- * Stylin' 0.0.1a - JavaScript CSS Thingy
+ * Stylin' 0.0.1 - JavaScript CSS Thingy
  *
  * Copyright (c) 2011 Lindsay Evans <http://linz.id.au/>
  * Licensed under the MIT <http://www.opensource.org/licenses/mit-license.php)> license.
@@ -20,8 +20,8 @@
 	Stylin.major_version = 0;
 	Stylin.minor_version = 0;
 	Stylin.patch_version = 1;
-	Stylin.special_version = 'a';
-	Stylin.version = '0.0.1a';
+	Stylin.special_version = '';
+	Stylin.version = '0.0.1';
 	Stylin.globals = ['Stylin', 'C'];
 
 
