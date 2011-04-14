@@ -107,7 +107,7 @@
 	}
 
 	function normalise_property_name(property_name){
-		return (property_name.charAt(0) + property_name.substr(1).replace(/[A-Z]/g, function(s){return '-' + s.toLowerCase();})).toLowerCase();
+		return (property_name.charAt(0) + property_name.substr(1).replace(/([A-Z])/g, '-$1')).toLowerCase();
 	}
 
 	function normalise_property_value(property_value){
