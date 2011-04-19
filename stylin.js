@@ -5,9 +5,6 @@
  * Licensed under the MIT <http://www.opensource.org/licenses/mit-license.php)> license.
  */
 
-/*jslint eqeqeq: true */
-/*global console: false, document: false */
-
 (function(document){
 
 	var Stylin = function(selector, properties, options){
@@ -26,8 +23,6 @@
 
 
 	// Public properties
-	Stylin.debug = false;
-	Stylin.document = document;
 
 	Stylin.options = {};
 	Stylin.default_options = {
@@ -36,7 +31,7 @@
 		prefix: '-stylin'
 	};
 
-	Stylin.head_element = Stylin.document.getElementsByTagName('head')[0];
+	Stylin.head_element = document.getElementsByTagName('head')[0];
 
 	Stylin.element_cache = {};
 
@@ -56,7 +51,7 @@
 		css += selector + '{';
 
 		for(property_name in properties){
-			css += normalise_property_name(property_name) + ':' + normalise_property_value(properties[property_name]) + ';';
+			css += normalise_property_name(property_name) + ':' + properties[property_name] + ';';
 		}
 		css += '}';
 
@@ -76,7 +71,7 @@
 	// Private functions
 
 	function add_style_element(){
-		var el = Stylin.document.createElement('style');
+		var el = document.createElement('style');
 
 		el.setAttribute('id', Stylin.options.prefix + '-' + (++element_index));
 		el.setAttribute('class', Stylin.options.prefix);
@@ -108,10 +103,6 @@
 
 	function normalise_property_name(property_name){
 		return (property_name[0] + property_name.substr(1).replace(/([A-Z])/g, '-$1')).toLowerCase();
-	}
-
-	function normalise_property_value(property_value){
-		return property_value;
 	}
 
 	// Expose in globals
