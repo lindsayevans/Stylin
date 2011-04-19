@@ -50,8 +50,13 @@
 
 		css += selector + '{';
 
-		for(property_name in properties){
-			css += normalise_property_name(property_name) + ':' + properties[property_name] + ';';
+		// If props are string just add to css
+		if(properties.charAt){
+			css += properties;
+		}else{
+			for(property_name in properties){
+				css += normalise_property_name(property_name) + ':' + properties[property_name] + ';';
+			}
 		}
 		css += '}';
 
