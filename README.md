@@ -8,7 +8,9 @@ Why the hell *wouldn't* you want to do it?
 
 ##Okay, so how do I do it?
 Simple, grasshopper:
-`C('.my-funky-thing', {color: '#c0ffee', backgroundColor: '#ba0bab'});`
+```` javascript
+C('.my-funky-thing', {color: '#c0ffee', backgroundColor: '#ba0bab'});
+````
 See [test.html](https://github.com/lindsayevans/Stylin/blob/master/test.html) for some examples of other stuff you can do
 
 ## Works in
